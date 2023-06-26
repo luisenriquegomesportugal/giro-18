@@ -2,8 +2,21 @@ import { DataView } from "primereact/dataview";
 import { useEffect, useState } from "react";
 import NovaMovimentacaoModal from "../components/nova-movimentacao";
 
+type Product = {
+    id?: string;
+    code?: string;
+    name: string;
+    description: string;
+    image?: string;
+    price?: number;
+    category?: string;
+    quantity?: number;
+    rating?: number;
+    [key: string]: string | string[] | number | boolean | undefined;
+};
+
 const BalancoPage = () => {
-    const [movimentacoes, setMovimentacoes] = useState([]);
+    const [movimentacoes, setMovimentacoes] = useState<Product[]>([]);
 
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/primefaces/sakai-react/master/sakai-ts/public/demo/data/products-small.json')
@@ -11,7 +24,7 @@ const BalancoPage = () => {
             .then((d) => setMovimentacoes(d.data));
     }, []);
 
-    const itemTemplate = (product) => {
+    const itemTemplate = (product: Product) => {
         return (
             <div className="col-12">
                 <div className="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
