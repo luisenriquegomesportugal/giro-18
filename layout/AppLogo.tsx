@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, useContext } from "react";
-import { LayoutContext } from "./context/layoutcontext";
+import { LayoutContext } from "../contexts/layoutcontext";
 
 type Props = HTMLAttributes<HTMLImageElement> & {
     icone?: boolean

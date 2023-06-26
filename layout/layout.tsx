@@ -10,7 +10,7 @@ import { AppTopbarRef, ChildContainerProps, LayoutState } from '../types/types';
 import AppFooter from './AppFooter';
 import AppSidebar from './AppSidebar';
 import AppTopbar from './AppTopbar';
-import { LayoutContext } from './context/layoutcontext';
+import { LayoutContext } from '../contexts/layoutcontext';
 
 const Layout = ({ children }: ChildContainerProps) => {
     const { layoutConfig, layoutState, setLayoutState, changeTheme } = useContext(LayoutContext);

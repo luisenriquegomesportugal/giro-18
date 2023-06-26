@@ -1,6 +1,6 @@
 import { AppMenuItem } from '../types/types';
 import AppMenuitem from './AppMenuitem';
-import { MenuProvider } from './context/menucontext';
+import { MenuProvider } from '../contexts/menucontext';
 
 const AppMenu = () => {
     const model: AppMenuItem[] = [

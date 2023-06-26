@@ -1,8 +1,8 @@
 import PrimeReact from 'primereact/api';
 import { useLocalStorage } from 'primereact/hooks';
 import { createContext, useEffect, useState } from 'react';
-import { LayoutColorSchemes } from '../../types/layout';
-import { ChildContainerProps, LayoutConfig, LayoutContextProps, LayoutState } from '../../types/types';
+import { LayoutColorSchemes } from '../types/layout';
+import { ChildContainerProps, LayoutConfig, LayoutContextProps, LayoutState } from '../types/types';
 export const LayoutContext = createContext({} as LayoutContextProps);
 
 export const LayoutProvider = ({ children }: ChildContainerProps) => {
