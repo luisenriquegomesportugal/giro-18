@@ -26,22 +26,16 @@ const BalancoPage = () => {
 
     const itemTemplate = (product: Product) => {
         return (
-            <div className="col-12">
-                <div className="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
-                    <div className="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
-                        <div className="flex flex-column align-items-center sm:align-items-start gap-3">
-                            <div className="text-2xl font-bold text-900">{product.name}</div>
-                            <div className="flex align-items-center gap-3">
-                                <span className="flex align-items-center gap-2">
-                                    <i className="pi pi-tag"></i>
-                                    <span className="font-semibold">{product.category}</span>
-                                </span>
-                            </div>
-                        </div>
-                        <div className="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
-                            <span className="text-2xl font-semibold">${product.price}</span>
-                        </div>
+            <div className="flex flex-row align-items-center justify-content-between py-2 gap-4 w-full">
+                <div className="flex flex-column align-items-start sm:align-items-start gap-2">
+                    <div className="text-lg font-bold text-900">{product.name}</div>
+                    <div className="text-sm text-300">
+                        Última atualização: <span className="font-semibold">{product.code}</span>
                     </div>
+                </div>
+                <div className="flex flex-column align-items-end">
+                    <span className="text-lg font-semibold">{product.price}%</span>
+                    <span className="text-sm text-300">R$ 158,58</span>
                 </div>
             </div>
         );
@@ -56,10 +50,11 @@ const BalancoPage = () => {
                         <NovaMovimentacaoModal />
                     </div>
                     <DataView
+                        className="mt-2"
                         value={movimentacoes}
                         itemTemplate={itemTemplate}
                         paginator
-                        rows={5} />
+                        rows={10} />
                 </div>
             </div>
         </div>

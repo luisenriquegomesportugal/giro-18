@@ -6,7 +6,7 @@ const NovaMovimentacaoModal = () => {
   const [displayBasic, setDisplayBasic] = useState(false);
 
   return (<>
-    <Button type="button" label="Nova movimentação" icon="pi pi-plus" onClick={() => setDisplayBasic(true)} />
+    <Button type="button" label="Nova movimentação" icon="pi pi-plus" className="p-button-sm" onClick={() => setDisplayBasic(true)} />
     <Dialog 
     modal 
     header="Nova movimentação"
