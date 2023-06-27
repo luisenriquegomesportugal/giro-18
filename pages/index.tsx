@@ -26,17 +26,12 @@ const BalancoPage = () => {
 
     const itemTemplate = (product: Product) => {
         return (
-            <div className="flex flex-row align-items-center justify-content-between py-2 gap-4 w-full">
-                <div className="flex flex-column align-items-start sm:align-items-start gap-2">
-                    <div className="text-lg font-bold text-900">{product.name}</div>
-                    <div className="text-sm text-300">
-                        Última atualização: <span className="font-semibold">{product.code}</span>
-                    </div>
+            <div className="flex flex-column w-full py-4">
+                <div className="flex flex-column sm:flex-row justify-content-start sm:justify-content-between align-items- start sm:align-items-center">
+                    <div className="text-xl">{product.name}</div>
+                    <span className="text-sm text-300">R$ 158,58 ({product.price}%)</span>
                 </div>
-                <div className="flex flex-column align-items-end">
-                    <span className="text-lg font-semibold">{product.price}%</span>
-                    <span className="text-sm text-300">R$ 158,58</span>
-                </div>
+                <div className="text-sm text-300 mt-2">Última atualização: {product.code}</div>
             </div>
         );
     };
@@ -46,7 +41,7 @@ const BalancoPage = () => {
             <div className="col-12">
                 <div className="card">
                     <div className="flex align-items-center justify-content-between">
-                        <h5 className="m-0">Balanço</h5>
+                        <h5 className="text-xl m-0">Balanço</h5>
                         <NovaMovimentacaoModal />
                     </div>
                     <DataView
